@@ -12,5 +12,5 @@ var Main = React.createClass({
   }
 });
 
-// when you declare the <Main /> you are telling react what component to render and "document.getElementById('app')"where to render to.
-React.render(<Main />, document.getElementById('app'));
+// Now when we require Main we can just call it
+module.exports= Main;

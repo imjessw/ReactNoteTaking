@@ -9,7 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "react": "^0.14.3"
+    "history": "^1.13.1",
+    "react": "^0.14.3",
+    "react-router": "^1.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.2.1",
