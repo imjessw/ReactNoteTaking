@@ -1,4 +1,10 @@
 var React = require('react');
+var RouteHandler= require('react-router').RouteHandler;
+
+
+
+
+
 console.log (" react is alive")
 // React.createClass creates the component for us. You have a few properties you can pass in, we are using render
 var Main = React.createClass({

@@ -23551,7 +23551,7 @@
 	var Route = Router.Route;
 
 	module.exports =
-	// below: when we render this app ath teh route (path="/") we will render the main component
+	// below: when we render this app  the route (path="/") we will render the main component, which will always be showing
 	React.createElement(
 	  Route,
 	  { name: 'app', path: '/', handler: Main },
@@ -23563,28 +23563,30 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
+	var RouteHandler = __webpack_require__(157).RouteHandler;
+
 	console.log(" react is alive");
 	// React.createClass creates the component for us. You have a few properties you can pass in, we are using render
 	var Main = React.createClass({
-	  displayName: "Main",
+	  displayName: 'Main',
 
 	  // render specifies what the UI looks like for this specific element
 	  render: function () {
 	    return React.createElement(
-	      "div",
-	      { className: "main-container" },
+	      'div',
+	      { className: 'main-container' },
 	      React.createElement(
-	        "nav",
-	        { className: "navbar nabvar-default", role: "navigation" },
+	        'nav',
+	        { className: 'navbar nabvar-default', role: 'navigation' },
 	        React.createElement(
-	          "div",
-	          { className: "col-sm-7 col-sm-offset-2", style: { marginTop: 15 } },
-	          "Menu"
+	          'div',
+	          { className: 'col-sm-7 col-sm-offset-2', style: { marginTop: 15 } },
+	          'Menu'
 	        )
 	      ),
 	      React.createElement(
-	        "div",
-	        { className: "container" },
+	        'div',
+	        { className: 'container' },
 	        React.createElement(RouteHandler, null)
 	      )
 	    );
@@ -23612,6 +23614,8 @@
 	  }
 
 	});
+
+	module.exports = Home;
 
 /***/ }
 /******/ ]);
