@@ -23552,7 +23552,11 @@
 
 	module.exports =
 	// below: when we render this app ath teh route (path="/") we will render the main component
-	React.createElement(Route, { name: 'app', path: '/', handler: Main });
+	React.createElement(
+	  Route,
+	  { name: 'app', path: '/', handler: Main },
+	  React.createElement(DefaultRoute, { handler: Home })
+	);
 
 /***/ },
 /* 197 */
@@ -23568,8 +23572,21 @@
 	  render: function () {
 	    return React.createElement(
 	      "div",
-	      null,
-	      "Hello World!!!"
+	      { className: "main-container" },
+	      React.createElement(
+	        "nav",
+	        { className: "navbar nabvar-default", role: "navigation" },
+	        React.createElement(
+	          "div",
+	          { className: "col-sm-7 col-sm-offset-2", style: { marginTop: 15 } },
+	          "Menu"
+	        )
+	      ),
+	      React.createElement(
+	        "div",
+	        { className: "container" },
+	        React.createElement(RouteHandler, null)
+	      )
 	    );
 	  }
 	});

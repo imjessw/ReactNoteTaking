@@ -8,5 +8,6 @@ var Route = Router.Route;
 module.exports =(
   // below: when we render this app ath teh route (path="/") we will render the main component
   <Route name="app" path="/" handler={Main}>
+  	<DefaultRoute handler={Home} />
   </Route>
 );

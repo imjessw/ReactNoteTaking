@@ -5,9 +5,16 @@ var Main = React.createClass({
   // render specifies what the UI looks like for this specific element
   render: function(){
     return (
-      <div>
-        Hello World!!!
-      </div>
+    	<div className="main-container">
+    		<nav className='navbar nabvar-default' role="navigation">
+    			<div className="col-sm-7 col-sm-offset-2" style={{marginTop:15}}>
+    				Menu
+    			</div>
+    		</nav>
+    		<div className="container">
+    			<RouteHandler />
+    		</div>
+    	</div>
     )
   }
 });
