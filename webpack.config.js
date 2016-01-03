@@ -1,22 +1,17 @@
-module.exports ={
-  entry: "./app/App.js",
-  output: {
-    filename: "public/bundle.js"
-  },
-  // This is where we tell it what to do with teh main.js code
-  module: {
-    // Specifying the loader, in this case it's the babel loader
-    loaders: [
-      {
-        test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
-        loader:'babel',
-        query:
-          {
-            presets:['react','es2015']
-          }
+module.exports={
+  entry: "./app/components/Main.js",
+  output:{
+    filename:"public/bundle.js"
+  }
+  module:{
+    loaders:[
+    {
+      test:/\.jsx$/,
+      exclude: /(node_modules| bower_components)/,
+      loader:'babel',
+      query:{
+        presets:['react', 'es2015']
       }
-
-    ]
+    }]
   }
 };
