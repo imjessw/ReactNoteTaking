@@ -9,10 +9,11 @@ var Repos = React.createClass({
 
 	},
 	render: function() {
+		console.log('Repos: ',this.props.repos)
 		return (
 			<div> 
 				<p>Repos!</p>
-				<p>Repos: {this.props.repos}</p>
+
 			</div>
 		);
 	}
