@@ -24498,7 +24498,7 @@
 	var Router = __webpack_require__(159);
 	var Repos = __webpack_require__(214);
 	var UserProfile = __webpack_require__(215);
-	var Repos = __webpack_require__(216);
+	var Notes = __webpack_require__(216);
 
 	var Profile = React.createClass({
 		displayName: 'Profile',
