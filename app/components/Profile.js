@@ -10,7 +10,7 @@ var Profile = React.createClass({
 	mixins: [ReactFireMixin],
 	getInitialState: function() {
 		return {
-			notes:[],
+			notes:[1,2,3],
 			bio:{
 				name:'Jess'
 			},
@@ -19,7 +19,7 @@ var Profile = React.createClass({
 	},
 	// This is where you would put in you ajax requests & firebase listeners
 	componentDidMount: function(){
-		this.ref = new Firebase('https://burning-fire-6723.firebaseio.com/'); 
+		this.ref = new Firebase('https://react-notetaking.firebaseio.com/'); 
 		var childRef = this.ref.child(this.props.params.username);
 		this.bindAsArray(childRef, 'notes');
 	},

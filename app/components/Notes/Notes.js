@@ -4,7 +4,6 @@ var NotesList = require('./NotesList')
 
 var Notes = React.createClass({
 	render: function() {
-		console.log('Notes: ', this.props.notes);
 		return (
 			<div> 
 				<h3>Notes for {this.props.username}</h3>
@@ -16,3 +15,5 @@ var Notes = React.createClass({
 })
 
 module.exports= Notes;
+
+
