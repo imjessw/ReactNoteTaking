@@ -10,26 +10,25 @@ var Profile = React.createClass({
 	mixins: [ReactFireMixin],
 	getInitialState: function() {
 		return {
-			notes:[1,2,3],
+			notes:[],
 			bio:{
 				name:'Jess'
 			},
-			repos:['a','b','c'], 
+			repos:['a','b','c'] 
 		};
 	},
 	// This is where you would put in you ajax requests & firebase listeners
 	componentDidMount: function(){
-		this.ref = new Firebase('https://github-note-taker.firebaseio.com/'); 
+		this.ref = new Firebase('https://burning-fire-6723.firebaseio.com/'); 
 		var childRef = this.ref.child(this.props.params.username);
-		// our react mixin took our context and added a few properties
-		// bindAsArray takes two args: 1) ref to your argument 2) the property on your state you want to bind to.
 		this.bindAsArray(childRef, 'notes');
 	},
-	componentWillUnmount:Function(){
+	componentWillUnmount: function(){
 		this.unbind('notes');
 	},
 	render: function(){
-		console.log(this.props)
+		console.log(this.props);
+
 		return(
 			<div className='row'>
 				<div className="col-md-4">
@@ -37,11 +36,11 @@ var Profile = React.createClass({
 				</div>
 
 				<div className="col-md-4">
-					<Repos repos={this.state.repos}/>
+					<Repos username={this.props.params.username} repos={this.state.repos}/>
 				</div>
 
 				<div className="col-md-4">
-					<Notes notes={this.state.notes}/>
+					<Notes username={this.props.params.username} notes={this.state.notes}/>
 				</div>
 			</div>
 
