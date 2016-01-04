@@ -24521,9 +24521,16 @@
 			var childRef = this.ref.child(this.props.params.username);
 			this.bindAsArray(childRef, 'notes');
 		},
+
 		componentWillUnmount: function componentWillUnmount() {
 			this.unbind('notes');
 		},
+
+		handleAddNote: function handleAddNote(newNote) {
+			// update firebase with new note
+			this.ref.child(this.props.params.username).child(this.state.notes.length).set(newNote);
+		},
+
 		render: function render() {
 
 			return React.createElement(
@@ -24542,7 +24549,10 @@
 				React.createElement(
 					'div',
 					{ className: 'col-md-4' },
-					React.createElement(Notes, { username: this.props.params.username, notes: this.state.notes })
+					React.createElement(Notes, {
+						username: this.props.params.username,
+						notes: this.state.notes,
+						addNote: this.handleAddNote })
 				)
 			);
 		}
@@ -24638,13 +24648,15 @@
 
 	var React = __webpack_require__(1);
 	var NotesList = __webpack_require__(217);
+	var AddNote = __webpack_require__(220);
 
 	var Notes = React.createClass({
 		displayName: 'Notes',
 
 		propTypes: {
 			username: React.PropTypes.string.isRequired,
-			notes: React.PropTypes.array.isRequired
+			notes: React.PropTypes.array.isRequired,
+			addNote: React.PropTypes.func.isRequired
 
 		},
 		render: function render() {
@@ -25338,6 +25350,14 @@
 
 	module.exports = Firebase;
 
+
+/***/ },
+/* 220 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
 
 /***/ }
 /******/ ]);
