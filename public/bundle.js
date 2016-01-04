@@ -24515,7 +24515,8 @@
 				React.createElement(
 					'div',
 					{ className: 'col-md-4' },
-					'User Profile Component'
+					'User Profile Component --> ',
+					this.props.params.username
 				),
 				React.createElement(
 					'div',

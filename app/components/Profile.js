@@ -15,7 +15,7 @@ var Profile = React.createClass({
 			<div className='row'>
 				<div className="col-md-4">
 
-					User Profile Component
+					User Profile Component --> {this.props.params.username}
 				</div>
 
 				<div className="col-md-4">
