@@ -7,9 +7,11 @@ var Notes =require('./Notes/Notes');
 var Profile = React.createClass({
 	getInitialState: function() {
 		return {
-			notes:[],
-			bios:{},
-			repos:[], 
+			notes:[1,2,3],
+			bio:{
+				name:'Jess'
+			},
+			repos:['a','b','c'], 
 		};
 	},
 	render: function(){
@@ -17,15 +19,15 @@ var Profile = React.createClass({
 		return(
 			<div className='row'>
 				<div className="col-md-4">
-					<UserProfile />
+					<UserProfile username={this.props.params.username} bio={this.state.bio}/>
 				</div>
 
 				<div className="col-md-4">
-					<Repos />
+					<Repos repos={this.state.repos}/>
 				</div>
 
 				<div className="col-md-4">
-					<Notes />
+					<Notes notes={this.state.notes}/>
 				</div>
 			</div>
 

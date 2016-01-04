@@ -24505,9 +24505,11 @@
 
 		getInitialState: function getInitialState() {
 			return {
-				notes: [],
-				bios: {},
-				repos: []
+				notes: [1, 2, 3],
+				bio: {
+					name: 'Jess'
+				},
+				repos: ['a', 'b', 'c']
 			};
 		},
 		render: function render() {
@@ -24518,17 +24520,17 @@
 				React.createElement(
 					'div',
 					{ className: 'col-md-4' },
-					React.createElement(UserProfile, null)
+					React.createElement(UserProfile, { username: this.props.params.username, bio: this.state.bio })
 				),
 				React.createElement(
 					'div',
 					{ className: 'col-md-4' },
-					React.createElement(Repos, null)
+					React.createElement(Repos, { repos: this.state.repos })
 				),
 				React.createElement(
 					'div',
 					{ className: 'col-md-4' },
-					React.createElement(Notes, null)
+					React.createElement(Notes, { notes: this.state.notes })
 				)
 			);
 		}
@@ -24551,7 +24553,17 @@
 			return React.createElement(
 				'div',
 				null,
-				' Reeppooossss'
+				React.createElement(
+					'p',
+					null,
+					'Repos!'
+				),
+				React.createElement(
+					'p',
+					null,
+					'Repos: ',
+					this.props.repos
+				)
 			);
 		}
 	});
@@ -24573,7 +24585,23 @@
 			return React.createElement(
 				'div',
 				null,
-				' User Profile'
+				React.createElement(
+					'p',
+					null,
+					'User Profile!'
+				),
+				React.createElement(
+					'p',
+					null,
+					'Username: ',
+					this.props.username
+				),
+				React.createElement(
+					'p',
+					null,
+					'Bio: ',
+					this.props.bio.name
+				)
 			);
 		}
 	});
@@ -24595,7 +24623,17 @@
 			return React.createElement(
 				'div',
 				null,
-				' Notes'
+				React.createElement(
+					'p',
+					null,
+					'Notes!!!'
+				),
+				React.createElement(
+					'p',
+					null,
+					' Notes: ',
+					this.props.notes
+				)
 			);
 		}
 	});
