@@ -6,14 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  
   "license": "ISC",
-  "dependencies":{
+  "dependencies": {
     "react": "^0.14.3",
-    "react-dom": "^0.14.3"
-    
+    "react-dom": "^0.14.3",
+    "reactfire": "^0.5.1"
   },
-
   "homepage": "https://github.com/imjessw/ReactNoteTaking#readme",
   "devDependencies": {
     "babel-core": "^6.3.13",
