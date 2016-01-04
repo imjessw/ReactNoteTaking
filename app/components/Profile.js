@@ -27,7 +27,6 @@ var Profile = React.createClass({
 		this.unbind('notes');
 	},
 	render: function(){
-		console.log(this.props);
 
 		return(
 			<div className='row'>
